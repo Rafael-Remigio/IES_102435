@@ -83,3 +83,18 @@ For executing with arguments in maven
 
 	mvn exec:java -Dexec.mainClass="what to put here?" -Dexec.args="arg0 arg1 arg2"
 
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+Already know how to use basic git commands but need to learn more about branching:
+
+	https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud
+
+	https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging
