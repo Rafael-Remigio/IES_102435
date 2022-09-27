@@ -48,6 +48,8 @@ public class App {
                         Double.parseDouble(firstDay.getTMax()));
 
                         logger.info("Info log message");
+                        logger.info("The search was for city " + args[0]);
+
             } else {
                 System.out.println( "No results for this request!");
                 logger.error("Error log message");
