@@ -1,0 +1,46 @@
+Software Development lifecycle - SDLC 
+
+	https://www.youtube.com/watch?v=i-QyW8D3ei0
+	
+
+
+The software development sources
+
+	process-> foundation for software enginnering
+		-> can be a framework for many things:
+				-> activities
+				-> tasks (atomic activities)
+				-> actions (second level activities)
+		organizing work
+
+		Why? -> process makes software more ordely and manageable
+
+		
+		Specefies 
+			what
+			when
+			who
+
+
+		This is not about wrtingn good or bad software but about organizing
+		a good process is very important for this
+		
+		process depends on the product as well 
+
+		Process interfere whit 	-> creativitiy 
+					-> had burocracy
+					-> hinders agility
+		
+		usually proccess are only added in later stages the project
+			as projects grow proccess are more and more important
+
+	Software process models
+		abstract model on to developt software
+		they usually follow all the same phases, what can vairy are the timimg, exemples from MAS
+
+
+		waterfall -> plan driven model
+		incremental .> may be plan driven or agile		
+		iterative/evolutionary 
+
+		
