@@ -1,5 +1,8 @@
 package com.ies102435;
 
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+
 import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.Retrofit;
@@ -13,6 +16,7 @@ import com.ies102435.IpmaService;
 public class App {
 
     //todo: should generalize for a city passed as argument
+    private static Logger logger = LogManager.getLogger(App.class);
 
     public static void  main(String[] args ) {
 
@@ -42,8 +46,11 @@ public class App {
                         forecast.getCountry(),
                         firstDay.getForecastDate(),
                         Double.parseDouble(firstDay.getTMax()));
+
+                        logger.info("Info log message");
             } else {
                 System.out.println( "No results for this request!");
+                logger.error("Error log message");
             }
         } catch (Exception ex) {
             ex.printStackTrace();
