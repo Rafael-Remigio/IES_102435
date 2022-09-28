@@ -132,11 +132,38 @@ So docker is good for -> build; run and ship applications
 
 Containers and VMs
 
-	
+	Container -> Isolated environment for running an application
+		Give the same isolation as a VM
+		dont need a full OS (use Host Kernell (uses the kernell api))
+ 		lightweight
+		Start quickly
+		Dont need that many hardware resources
+
+
+	Virtual Machine -> Abstraction of a machine (abstraction of hardware)
+		Problems of VMs -> 	needs a full copy of an OS
+							slow start
+							resource intensive
+
+
+Architecture of Docker
+
+	Client server architecture
+		uses the OS kernel api 
 
 
 
+DOCKERFILE
 
+	Blue print and instructions to build a docker image
+
+IMAGE
+
+	Template for running the docker container
+
+Container
+
+	a running proccess
 
 
 Docker starting
@@ -154,6 +181,42 @@ Docker starting
 	Docker ps to list containers
 
 
+
+
+
+
+
+How to make an application be able to be ran by docker
+
+		we make a Dockerfile
+			this file will have the instructions to turn this app into an Image
+			any developer can then rebuild the image from the docker file and then turn it into a container
+			In the docker files we also have commands on how to start and run the application
+
+
+			We can push images to dockerhub wich is like github for docker, or a regestry of images.
+
+			to create an image we user "docker build -t {name of image} {directory where is dockerfile}"
+
+			To see all the images we have created we can use "docker image ls"
+
+			To run and create the container we can run "docker run {image name}"
+
+
+			***
+				# This is a base image
+				# we can see images on docker hub
+				FROM node:alpine
+				
+				
+				# copies everythin in this directory into the /app directory in the container
+				COPY . /app
+				
+				# moves us to the app directory, works like the cd command
+				WORKDIR /app
+				
+				CMD node app.js 
+			***
 
 --------------------------------------------------------------------------------------------------------------------------
 
