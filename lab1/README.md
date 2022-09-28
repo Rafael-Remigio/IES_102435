@@ -121,7 +121,28 @@ Why use containers instead of VMs
 	Start quickly
 	need less hardware resources
 
-Docker 
+With docker we can package the application with every thing it needs and run it anywhere, on any machine with docker.
+This makes deployment very easy, and for working with multiple people makes it much easier to make sure every one is testing and running the same version. Also this way we dont have to spend much time installing dependencies and software
+
+Since docker is a container, we can have different versions of software running on the same machine, because of the virtualization achieved by the container
+
+So docker is good for -> build; run and ship applications
+
+
+
+Containers and VMs
+
+	
+
+
+
+
+
+
+Docker starting
+
+
+
 	create the volume that Portainer Server will use to store its database:
 		
 		docker volume create portainer_data
