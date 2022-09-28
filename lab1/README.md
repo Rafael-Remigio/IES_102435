@@ -207,16 +207,25 @@ How to make an application be able to be ran by docker
 				# This is a base image
 				# we can see images on docker hub
 				FROM node:alpine
-				
-				
+
+
 				# copies everythin in this directory into the /app directory in the container
 				COPY . /app
-				
+
 				# moves us to the app directory, works like the cd command
 				WORKDIR /app
-				
+
 				CMD node app.js 
 			***
+
+
+			We can also run a full os and interact with it with the "docker run -it {ubunto for example}"
+
+
+	
+to have code updated we need to have the docker-compose.yml file, and set enviroment variables
+
+
 
 --------------------------------------------------------------------------------------------------------------------------
 
@@ -239,9 +248,15 @@ How to make an application be able to be ran by docker
 
         b) Although maven is a building tool it can also be used to execute code; You can run your project on with maven using "mnv exec:"
 
+
+		c) Firs we need to make sure we are working on an updated version of the project so we fetch/pull (to see and or pull changes from the shared repository)
+		After making the feature we can user "git add {files we changed}" to add then to the change files; Then we commit a change with "git commit", commit requires a message that should be descriptive. The commit is only local, to had it to a shared repository or hub we the use "git push"
+
+		d) The advice I have found and usually follow is to first use Capitalization in the first word to see logs better on the terminal ("because i use linux and it makes it more destinct")
+		The usage of imperatives is also important, and KeyWords like "Update, fix, Refactor, Rebuilt" are very descriptive and helpfull. Being direct and descriptive is the most important thing. Also should be specific, just saying "Updates to navbar" is very lacking when there could have been 100 changes to the navbar. Something like "Updated Navbar Color in dark mode" is way more descriptive and helpfull
                         
 
-
+		e) Its important to take an extra step to ensure data persistence; If we want to have the data to be stored after the docker stops running we need to Bind a volume. We can do this using "-v path" in the run command
 
 
 

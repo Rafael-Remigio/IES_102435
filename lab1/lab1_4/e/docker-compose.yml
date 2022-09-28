@@ -1,0 +1,13 @@
+
+version: "3.9"
+services:
+  web:
+    build: .
+    ports:
+      - "8085:5000"  # had to change this port because it was already being used
+    volumes:
+      - .:/code
+    environment:
+      FLASK_DEBUG: True
+  redis:
+    image: "redis:alpine"
