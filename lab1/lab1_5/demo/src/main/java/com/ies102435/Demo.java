@@ -1,14 +1,11 @@
 package com.ies102435;
 
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import com.ies102435.IpmaService;
 
 import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import com.ies102435.IpmaCityForecast; //may need to adapt package name
-import com.ies102435.IpmaService;
 
 /**
  * demonstrates the use of the IPMA API for weather forecast

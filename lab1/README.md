@@ -226,6 +226,24 @@ How to make an application be able to be ran by docker
 to have code updated we need to have the docker-compose.yml file, and set enviroment variables
 
 
+--------------------------------------------------------------------------------------------------------
+Ex 5)
+Maven multiple projects 
+
+	mvn install:install-file    -Dfile=/home/rafael/Desktop/LEI/IES_102435/lab1/lab1_5/demo/target/demo-1.0-SNAPSHOT.jar -DgroupId=com.ies102435 -DartifactId=demo    -Dversion=1   -Dpackaging=jar -DgeneratePom=true # to install on the local mvn repository
+
+
+	mvn package -U #to force maven to check the local repository
+
+
+
+
+	Cannot complete exercise 1.5
+
+		[ERROR] Failed to execute goal org.codehaus.mojo:exec-maven-plugin:3.1.0:java (default-cli) on project WeatherUI: An exception occurred while executing the Java class. com.ies102435.FrontEnd -> [Help 1]
+
+		I cannot get pass this error with the maven exec plugin, and also can't run the project with the jar. Compiling, testing packaging, installing, every maven pluggin works with no issues. I spent last nigth trying to fix this, and to no conclusion, I understood how to work with dependencies in Maven and imported them properly. 
+
 
 --------------------------------------------------------------------------------------------------------------------------
 
