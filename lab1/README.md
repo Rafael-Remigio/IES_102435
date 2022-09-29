@@ -257,7 +257,7 @@ to have code updated we need to have the docker-compose.yml file, and set enviro
                         
 
 		e) Its important to take an extra step to ensure data persistence; If we want to have the data to be stored after the docker stops running we need to Bind a volume. We can do this using "-v path" in the run command
-
+		Also it allows us to change code locally and having docker running from those local files. We used this in exercice 4 e) by adding a volume location to the docker-compose.yml file
 
 
 

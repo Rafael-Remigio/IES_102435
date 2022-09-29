@@ -13,27 +13,22 @@ import com.ies102435.IpmaService;
 /**
  * demonstrates the use of the IPMA API for weather forecast
  */
-public class App {
+public class Demo {
 
     //todo: should generalize for a city passed as argument
-    private static Logger logger = LogManager.getLogger(App.class);
-
-    public static void  main(String[] args ) {
-
-        // get a retrofit instance, loaded with the GSon lib to convert JSON into objects
 
 
-        int CITY_ID_AVEIRO = Integer.parseInt(args[0]);
+    public String getCityWeather(int city){
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://api.ipma.pt/open-data/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        // create a typed interface to use the remote API (a client)
+                  // create a typed interface to use the remote API (a client)
         IpmaService service = retrofit.create(IpmaService.class);
         // prepare the call to remote endpoint
-        Call<IpmaCityForecast> callSync = service.getForecastForACity(CITY_ID_AVEIRO);
+        Call<IpmaCityForecast> callSync = service.getForecastForACity(city);
 
         try {
             Response<IpmaCityForecast> apiResponse = callSync.execute();
@@ -42,21 +37,22 @@ public class App {
             if (forecast != null) {
                 var firstDay = forecast.getData().listIterator().next();
 
-                System.out.printf( "Maximum Temperature for %s for the day %s  is  %4.1f %n",
+                String re = String.format( "Maximum Temperature for %s for the day %s  is  %4.1f %n",
                         forecast.getCountry(),
                         firstDay.getForecastDate(),
                         Double.parseDouble(firstDay.getTMax()));
 
-                        logger.info("Info log message");
-                        logger.info("The search was for city " + args[0]);
-
+                return re;
             } else {
-                System.out.println( "No results for this request!");
-                logger.error("Error log message");
+                return "No results for this request!";
+
             }
         } catch (Exception ex) {
             ex.printStackTrace();
+
+            return "An error occurred";
         }
 
     }
+
 }
