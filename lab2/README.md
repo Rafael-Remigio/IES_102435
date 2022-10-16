@@ -24,3 +24,12 @@ Simply put, the core difference is that application servers have full support fo
 ### Apache Tomcat
 
 One of the most popular Web Servers for java development is [Apache Tomcat](https://tomcat.apache.org/)
+
+<sub>For a production environment, you would install Tomcat as a system service/daemon or, even better, as a “dockerized” service. In this case, we will just start and stop from the command line, in the installation folder </sub>
+
+1. Run Appache Tomcat with the shell Script startup.sh in the apache bin folder; 
+2. Then we can access the http://localhost:8080/ to see the if the server is installed properly and running.
+3. To manage the aplications we can access the Tomcat Web Application Manager with http://localhost:8080/manager/html  (We need to set the password and username to admin admin in the conf/tomcat-users.xml file)
+4. We can generate war files with maven
+5. We can deploy the war in the server in the Application Manager
+6. Every time we change we need to redeploy the new War file
