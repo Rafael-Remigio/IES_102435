@@ -1,0 +1,36 @@
+
+
+Agile Software development
+
+
+	https://www.youtube.com/watch?v=ZZ_vnqvW4DQ
+
+	agile is not a methodology
+	
+	agile is a Guidance and methods on how to procede better
+	
+	agile are principles not a methodology
+	
+
+	iterative approach -> like many litle watterfalls
+		in each of those cycles we should have a working prototype
+
+	
+	
+	a methodology of agile -> Extreme programming
+	
+		most widely used approach to agile software decelopment
+		no one follows it 100%, should adapt it to our needs
+
+		during the same day we should make many commits and have very different versions of the software
+
+		first we develop the test for the system and only then do we develop the system
+			this forces us to think about what can be the problems that can occur in a system
+			some companies have testing and developing teams
+
+		Continuous integration -> i write line, i compile,i test, i deploy
+	
+		Sustainablepace -> time managment is very important, things should be well planed and there can be almost no delays
+		 
+
+		On-sitecustomer -> dialogue with costumer
