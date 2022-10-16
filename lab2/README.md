@@ -15,3 +15,12 @@ When an application running in a web server receives a request, the Server hands
 
 
 <sub> Although both are called containers, Docker Containers and servlet containers are very different. Docker and other types of containers, usually refer to virtualized envirments to running aplications. Servlet Containers are used in to execute java code at runtime in a server </sub>
+
+### WebServers and Application Servers
+
+Simply put, the core difference is that application servers have full support for the Java EE spec, whereas web servers support a small subset of that functionality. Aplication Severs do what WebServers do and more.
+
+
+### Apache Tomcat
+
+One of the most popular Web Servers for java development is [Apache Tomcat](https://tomcat.apache.org/)
