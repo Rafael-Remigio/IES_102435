@@ -20,6 +20,7 @@ When an application running in a web server receives a request, the Server hands
 
 Simply put, the core difference is that application servers have full support for the Java EE spec, whereas web servers support a small subset of that functionality. Aplication Severs do what WebServers do and more.
 
+<sub>Maven -> for creating a web app we can user the -DarchetypeArtifactId=maven-archetype-webapp  </sub>
 
 ### Apache Tomcat
 
@@ -33,3 +34,13 @@ One of the most popular Web Servers for java development is [Apache Tomcat](http
 4. We can generate war files with maven
 5. We can deploy the war in the server in the Application Manager
 6. Every time we change we need to redeploy the new War file
+
+### Building our first servlet
+
+MyFirstServlet extends HttpServlet. This is mandatory because all servlets must be either a generic servlet that extends javax.servlet.GenericServlet or an HTTP servlet that extends javax.servlet.http.HttpServlet.
+Overriding doGet() and doPost() methods. These methods are defined in HttpServlet class. Whenever a GET or POST request come, it is mapped to it’s respective method e.g. if you send a HTTP GET request to this servlet, then doGet() method is called.
+There are some other useful methods as well which you can override to control the application in runtime e.g. getServletInfo().
+
+
+## 2.2 Embedded Jetty Server
+
