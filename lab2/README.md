@@ -44,3 +44,6 @@ There are some other useful methods as well which you can override to control th
 
 ## 2.2 Embedded Jetty Server
 
+Jetty Server. The tutorial is veru old, most of it is very outdated and it was very dificult to solve some issues i had but i got it working
+
+<img src="https://github.com/Rafael-Remigio/IES_102435/blob/main/lab2/lab2_2/Screenshot_2022-10-18_00-13-03.png"></img>
