@@ -72,6 +72,10 @@ After the tutorial from the [Spring example](https://spring.io/guides/gs/serving
 ```
 javax.servlet.ServletException: Circular view path [greeting]: would dispatch back to the current handler URL [/greeting] again. Check your ViewResolver setup! (Hint: This may be the result of an unspecified view, due to default view name generation.)
 ```
-Apparently replacing it with @RestController solved the issue. <sub> Thank your kind stack overflow stranger </sub> [The explanation why](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-controller).
+Apparently replacing it with @RestController solved the issue. [The explanation why](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-controller).
+
+<sub> Thank you kind stack overflow stranger </sub> 
+
+
 
 

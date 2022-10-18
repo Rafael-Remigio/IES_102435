@@ -44,6 +44,29 @@ public class MoviesController {
   }
 
 
+  @GetMapping("/quote")
+  public String getRandomQuote() {
+    // random number from 0 to the size of the list
+    int random = (int) (Math.random() * filmes.size());
+    // return the random quote
+    return filmes.get(random).randomQuote();
+  }
+
+
+  @GetMapping("/showQuote")
+  public String getRandomQuotefromShow(@RequestParam Integer show_id) {
+    // random number from 0 to the size of the list
+    Movie local = filmes.get(0);
+    for (Movie movie : filmes) {
+        if (movie.getId() == show_id){
+            local = movie;
+        }
+    }
+    // return the random quote
+
+    return local.randomQuote();
+
+    }
 
 
 }
