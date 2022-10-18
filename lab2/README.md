@@ -47,3 +47,31 @@ There are some other useful methods as well which you can override to control th
 Jetty Server. The tutorial is veru old, most of it is very outdated and it was very dificult to solve some issues i had but i got it working
 
 <img src="https://github.com/Rafael-Remigio/IES_102435/blob/main/lab2/lab2_2/Screenshot_2022-10-18_00-13-03.png"></img>
+
+## 2.3 Spring Boot
+
+Spring Boot makes it easy to create stand-alone, production-grade Spring based Applications that you can "just run".
+
+### Features
+* Create stand-alone Spring applications
+* Embed Tomcat, Jetty or Undertow directly (no need to deploy WAR files)
+* Provide opinionated 'starter' dependencies to simplify your build configuration
+* Automatically configure Spring and 3rd party libraries whenever possible
+* Provide production-ready features such as metrics, health checks, and externalized configuration
+* Absolutely no code generation and no requirement for XML configuration
+
+We can build new web app project by using the [Spring Boot Initializer](https://start.spring.io/). This will provide a zip with all the folders and the POM with all the dependencies needed.
+
+We can then run the project using maven commands or the maven web wrapper
+```
+1. ./mvnw clean install
+2. ./mvnw spring-boot:run 
+```
+
+After the tutorial from the [Spring example](https://spring.io/guides/gs/serving-web-content/) i got this error
+```
+javax.servlet.ServletException: Circular view path [greeting]: would dispatch back to the current handler URL [/greeting] again. Check your ViewResolver setup! (Hint: This may be the result of an unspecified view, due to default view name generation.)
+```
+Apparently replacing it with @RestController solved the issue. <sub> Thank your kind stack overflow stranger </sub> [The explanation why](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-controller).
+
+
