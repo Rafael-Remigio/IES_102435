@@ -99,3 +99,46 @@ Each Movie stores a Name, an Array list of quotes and have an identifying id.
 
 
 
+Exercise 4 is completed now to the review Questions. 
+
+<sub>note: Spring boot does make things easier but i would stil rather be using python.</sub>
+
+
+# Review Questions
+
+## A What are the responsibilities/services of a “servlet container”?
+
+    The servlet container is a way to host a servlet, allowing the generation of dynamic pages. The servlet container is a part of the web server that can run in a second proccess and generate theese html pages using java;
+
+### B.Explain, in brief, the “dynamics” of Model-View-Controller approach used in Spring Boot to serve web content. (You may exemplify with the context of the previous exercises.)
+
+* A model contains the data of the application. A data can be a single object or a collection of objects.
+* A controller contains the business logic of an application. Here, the @Controller annotation is used to mark the class as the controller.
+* A view represents the provided information in a particular format. Generally, JSP+JSTL is used to create a view page. Although spring also supports other view technologies such as Apache Velocity, Thymeleaf and FreeMarker.
+
+* The Front Controller in Spring Web MVC, the DispatcherServlet class works as the front controller. It is responsible to manage the flow of the Spring MVC application.
+
+Stole this anwser from https://www.javatpoint.com/spring-mvc-tutorial
+
+
+* The Controller is for exemple the MoviesController from exercise 4 wich is resposible with dealing with all the requests, in this case there is only one controller, but there can be more;
+* The view is the greeting.html page from exercise 3;
+* Model can be the Movie class from exercise 4 for example;
+* The front controller in Spring boot is the DispatcherServlet
+
+### C Starter Dependencies
+Starter depencies are just dependencies that aggregate commonly used dependencies, this way we don't have to manually add all the dependencies we need. This makes spring boot much easier to use;
+
+### D Which annotations are transitively included in the @SpringBootApplication
+* @Configuration, 
+* @EnableAutoConfiguration
+* @ComponentScan
+
+
+### E My top 5 Best practices for REST APIdesign
+
+1. Use JSON as the Format for Sending and Receiving Data (I did not do this in my api)
+2. Use Nouns Instead of Verbs in Endpoints
+3. Name Collections with Plural Nouns (this should be used not only in RestApis but in everything)
+4. Provide Accurate API Documentation (not that i will do this but i allways like when other people have good api documentation)
+5. Use Status Codes in Error Handling
