@@ -72,11 +72,7 @@ After the tutorial from the [Spring example](https://spring.io/guides/gs/serving
 ```
 javax.servlet.ServletException: Circular view path [greeting]: would dispatch back to the current handler URL [/greeting] again. Check your ViewResolver setup! (Hint: This may be the result of an unspecified view, due to default view name generation.)
 ```
-Apparently replacing it with @RestController solved the issue. [The explanation why](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-controller).
-
-<sub> Thank you kind stack overflow stranger </sub> 
-
-
+Apparently replacing it with @RestController solved the issue. <sub> Thank your kind stack overflow stranger </sub> [The explanation why](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-controller).
 
 ### Building a RESTful Web Service
 
@@ -88,9 +84,18 @@ The @GetMapping annotation ensures that HTTP GET requests to /greeting are mappe
 
 The main() method uses Spring Boot’s SpringApplication.run() method to launch an application. There is no web.xml file, either. This web application is 100% pure Java and you did not have to deal with configuring any plumbing or infrastructure.
 
-##
+## 2.4 Movies REST API
 
 I know actually understand how REST api's work. Who knew that actually reading the articles helped?
 <img src="https://github.com/Rafael-Remigio/IES_102435/blob/main/lab2/lab2_4/Screenshot_2022-10-18_21-11-04.png"></img>
 Now i actually need to do the exercise.
+
+I decided to store movies and the movies themselfs store the quotes in this exercise. It just seems to make more sense in a way to reduce the amount of enteties and in terms of Software design principles.
+
+Each Movie stores a Name, an Array list of quotes and have an identifying id.
+
+
+<img src="https://github.com/Rafael-Remigio/IES_102435/blob/main/lab2/lab2_4/Screenshot_2022-10-18_22-24-17.png"></img>
+
+
 
