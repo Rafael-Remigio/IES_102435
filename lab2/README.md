@@ -78,4 +78,19 @@ Apparently replacing it with @RestController solved the issue. [The explanation 
 
 
 
+### Building a RESTful Web Service
+
+The @GetMapping annotation ensures that HTTP GET requests to /greeting are mapped to the greeting() method.
+
+@RequestParam binds the value of the query string parameter name into the name parameter of the greeting() method. If the name parameter is absent in the request, the defaultValue of World is used.
+
+**A key difference between a traditional MVC controller and the RESTful web service controller shown earlier is the way that the HTTP response body is created. Rather than relying on a view technology to perform server-side rendering of the greeting data to HTML, this RESTful web service controller populates and returns a Greeting object. The object data will be written directly to the HTTP response as JSON**
+
+The main() method uses Spring Boot’s SpringApplication.run() method to launch an application. There is no web.xml file, either. This web application is 100% pure Java and you did not have to deal with configuring any plumbing or infrastructure.
+
+##
+
+I know actually understand how REST api's work. Who knew that actually reading the articles helped?
+<img src="https://github.com/Rafael-Remigio/IES_102435/blob/main/lab2/lab2_4/Screenshot_2022-10-18_21-11-04.png"></img>
+Now i actually need to do the exercise.
 
