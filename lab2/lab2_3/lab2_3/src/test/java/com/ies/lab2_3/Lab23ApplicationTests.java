@@ -1,10 +1,10 @@
-package com.ies_102435.lab3;
+package com.ies.lab2_3;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Lab3ApplicationTests {
+class GreetingController {
 
 	@Test
 	void contextLoads() {

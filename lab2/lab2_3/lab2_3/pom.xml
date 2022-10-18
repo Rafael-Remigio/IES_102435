@@ -8,10 +8,10 @@
 		<version>2.7.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.ies_102435</groupId>
-	<artifactId>lab3</artifactId>
+	<groupId>com.ies</groupId>
+	<artifactId>lab2_3</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>lab3</name>
+	<name>lab2_3</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
@@ -35,6 +35,23 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.0</version>
+          <executions>
+                <execution>
+                        <id>my-execution</id>
+                        <phase>package</phase>
+                        <goals>
+                                <goal>java</goal>
+                        </goals>
+                </execution>
+          </executions>
+          <configuration>
+                <mainClass>com.ies.lab2_3.ServingWebContentApplication</mainClass>
+          </configuration>
+        </plugin>
 		</plugins>
 	</build>
 
