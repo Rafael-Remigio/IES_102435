@@ -5,14 +5,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.4</version>
+		<version>2.7.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.ies</groupId>
 	<artifactId>lab3_1</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>lab3_1</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Spring Boot CRUD Application</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -27,22 +27,38 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-thymeleaf</artifactId>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-data-jpa</artifactId>
-    </dependency>
-    <dependency>
-        <groupId>com.h2database</groupId>
-        <artifactId>h2</artifactId>
-    </dependency>
-	<dependency> 
-    <groupId>org.springframework.boot</groupId> 
-    <artifactId>spring-boot-starter-validation</artifactId> 
-</dependency>
+
+
+    	<dependency>
+    	    <groupId>org.springframework.boot</groupId>
+    	    <artifactId>spring-boot-starter-web</artifactId>
+    	</dependency>
+    	<dependency>
+    	    <groupId>org.springframework.boot</groupId>
+    	    <artifactId>spring-boot-starter-thymeleaf</artifactId>
+    	</dependency>
+    	<dependency>
+    	    <groupId>org.springframework.boot</groupId>
+    	    <artifactId>spring-boot-starter-data-jpa</artifactId>
+    	</dependency>
+    	<dependency>
+    	    <groupId>com.h2database</groupId>
+    	    <artifactId>h2</artifactId>
+    	</dependency>
+
+
+  		<dependency>
+  		  <groupId>javax.validation</groupId>
+  		  <artifactId>validation-api</artifactId>
+  		  <version>2.0.1.Final</version>
+  		</dependency>
+  		<dependency>
+  		  <groupId>org.hibernate</groupId>
+  		  <artifactId>hibernate-validator</artifactId>
+  		  <version>8.0.0.Final</version>
+  		</dependency>
+
+
 	</dependencies>
 
 	<build>
@@ -51,6 +67,25 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
+			<plugin>
+        	        <groupId>org.codehaus.mojo</groupId>
+        	        <artifactId>exec-maven-plugin</artifactId>
+        	        <version>3.1.0</version>
+        	  <executions>
+        	        <execution>
+        	                <id>my-execution</id>
+        	                <phase>package</phase>
+        	                <goals>
+        	                        <goal>java</goal>
+        	                </goals>
+        	        </execution>
+        	  </executions>
+        	  <configuration>
+        	        <mainClass>com.ies.lab3_1.Lab31Application</mainClass>
+        	  </configuration>
+        	</plugin>
+
 		</plugins>
 	</build>
 

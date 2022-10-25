@@ -1,12 +1,16 @@
 package com.ies.lab3_1;
 
+
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 
-@Entity
+@Entity(name="utilizador")
 public class User {
     
     @Id
@@ -18,11 +22,17 @@ public class User {
     @NotBlank(message = "Email is mandatory")
     private String email;
 
+    @NotBlank(message = "PhoneNumber is mandatory")
+    @Min(value = 900000000,message= "PhoneNumber is mandatory")
+    @Max(value = 999999999,message= "PhoneNumber is mandatory")
+    private int phonenumber;
+
     public User() {}
 
-    public User(String name, String email) {
+    public User(String name, String email,int phonenumber) {
         this.name = name;
         this.email = email;
+        this.phonenumber = phonenumber;
     }
 
     public void setId(long id) {
@@ -41,6 +51,10 @@ public class User {
         this.email = email;
     }
 
+    public void setPhonenumber(int phonenumber){
+        this.phonenumber = phonenumber;
+    }
+
     public String getName() {
         return name;
     }
@@ -49,8 +63,14 @@ public class User {
         return email;
     }
 
+    public int getPhonenumber(){
+        return phonenumber;
+    }
+
+    
+
     @Override
     public String toString() {
-        return "User{" + "id=" + id + ", name=" + name + ", email=" + email + '}';
+        return "User{" + "id=" + id + ", name=" + name + ", email=" + email + ", phonenumber: " + phonenumber+ '}';
     }
 }
