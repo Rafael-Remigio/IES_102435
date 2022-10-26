@@ -39,7 +39,53 @@ Layers
 
 * as noted befor the **@NotBlank** constrain makes fields no be blank by using the **Hibernate Validator** for validating the constrained fields before persisting or updating an entity
 
-3.1 c)
+## 3.1 c)
 * Spring boot is good but omg the documentation is so bad sometimes; for the different javax.validation.constraints we can see the [here](javax.validation.constraints)
 * In this case i use phone number as an Int and validate it with min constaint, max constraint and notNull Contraint;
 * btw self note the toString() really matters, i lost so much time debugging because i forgot ":" in the toString
+
+
+## 3.2 a)
+
+Docker run command 
+``` 
+docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=secret1 -e MYSQL_DATABASE=demo -e MYSQL_USER=demo -e MYSQL_PASSWORD=secret2 -p 33060:3306 -d mysql/mysql-server:5.7 
+```
+
+### REST API using curl
+<sub>yes i am using curl, i refuse to install more software in this pc, also learnig how to use curl is praxis</sub>
+
+* get
+
+    ```
+    curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET http://adreess/resource
+    ```
+    <image src="images/get.png"></image>
+* post
+    ```
+    curl -H 'Content-Type: application/json' -s -XPOST http://localhost:8080/api/v1/employees -d '{"firstName": "Boss", "lastName": "Baby", "emailId": "bossbaby@proton.me"} '   
+    ```
+    <image src="images/post.png"></image>
+
+* put   
+    ```
+    curl -H 'Content-Type: application/json' -s -XPUT http://localhost:8080/api/v1/employees/1 -d '{"firstName": "Michael", "lastName": "The BossBaby", "emailId": "bossbaby@proton.me"} '
+    ```
+    <image src="images/put.png"></image>
+
+* delete
+    ```
+    curl -H 'Content-Type: application/json' -s -XDELETE http://localhost:8080/api/v1/employees/1  
+    ```
+    <image src="images/delete.png"></image>
+
+
+
+In this case the url is http://localhost:8080/api/v1/"resource"
+
+## 3.2 g)
+
+Spring Data JPA focuses on using JPA to store data in a relational database. Its most compelling feature is the ability to create repository implementations automatically, at runtime, from a repository interface.
+In a typical Java application, you might expect to write a class that implements CustomerRepository. However, that is what makes Spring Data JPA so powerful: You need not write an implementation of the repository interface. Spring Data JPA creates an implementation when you run the application.
+
+**Spring is actually just magic**
