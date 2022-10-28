@@ -89,3 +89,13 @@ Spring Data JPA focuses on using JPA to store data in a relational database. Its
 In a typical Java application, you might expect to write a class that implements CustomerRepository. However, that is what makes Spring Data JPA so powerful: You need not write an implementation of the repository interface. Spring Data JPA creates an implementation when you run the application.
 
 **Spring is actually just magic**
+
+
+
+## 3.3 
+
+docker container for database:
+
+```
+rafael@rafael-K55VJ:~/Desktop/LEI/IES_102435/lab3/lab3_3$ docker run --name movieDB-mysql -e MYSQL_ROOT_PASSWORD=secret1 -e MYSQL_DATABASE=demo -e MYSQL_USER=demo -e MYSQL_PASSWORD=secret2 -p 33060:3306 -d mysql/mysql-server:5.7 
+```
