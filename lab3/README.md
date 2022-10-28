@@ -110,3 +110,22 @@ To add quotes to a movie
  curl -H 'Content-Type: application/json' -s -XPUT http://localhost:8080/api/v1/movies/3/addQuote -d '{"value": "We may be small, but we re about to teach grown ups a big lesson."}'  
 ```
 
+
+# Review Questions
+
+## a)
+A RESTController in Spring Boot is a special verison of Controller
+|Controller | RESTController|
+| :----:| :----:|
+|@Controller is used to mark classes as Spring MVC Controller.|@RestController annotation is a special controller used in RESTful Web services|
+|@Controller is used in MVC Java formats|The RestController allows to handle all REST APIs such as GET, POST, Delete, and PUT requests. |
+|Allows returning Views|It's not possible to return Views|
+|In @Controller, we need to use @ResponseBody on every handler method.|In @RestController, we don’t need to use @ResponseBody on every handler method.|
+
+
+## c) 
+The annotations Table Column and Id are all JPA Data annotations
+* Table refers to the name of the SQL/JPA table
+* Column allows us to change the name and other configurations the specific column
+* Id indicates the primary key of a Table
+* Entity means that a class will be mapped and managed by JPA
