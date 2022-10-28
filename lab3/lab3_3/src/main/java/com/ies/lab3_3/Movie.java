@@ -63,6 +63,11 @@ public class Movie {
 	}
 
 
+    public Set<Quote> getQuotes(){
+        return quotes;
+    }
+
+
     public void addQuote(Quote content){
         quotes.add(content);
     }

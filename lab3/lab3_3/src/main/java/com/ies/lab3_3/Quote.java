@@ -35,11 +35,10 @@ public class Quote {
 
     }
 
-    public Quote(Movie movie, String value) {
-        this.movie = movie;
+    public Quote( String value){
         this.value = value;
-    }
 
+    }
 
     public Movie getMovie() {
         return movie;

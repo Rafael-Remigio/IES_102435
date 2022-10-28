@@ -3,6 +3,7 @@ package com.ies.lab3_3;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import javax.validation.Valid;
 
@@ -64,6 +65,7 @@ public class MovieController {
         .orElseThrow(() -> new ResourceNotFoundException("Movie not found for this id :: " + movieId));
 
         movie.addQuote(quote);
+        System.out.println(quote);
         final Movie updatedmMovie = movieRepository.save(movie);
         return ResponseEntity.ok(updatedmMovie);
     }
@@ -79,4 +81,16 @@ public class MovieController {
         response.put("deleted", Boolean.TRUE);
         return response;
     }
+
+
+    @GetMapping("/movieQuotes/{id}")
+    public Set<Quote> getMovieQuotes(@PathVariable(value = "id") Long movieId)
+        throws ResourceNotFoundException {
+        Movie movie = movieRepository.findById(movieId)
+          .orElseThrow(() -> new ResourceNotFoundException("Movie not found for this id :: " + movieId));
+        return movie.getQuotes();
+    }
+
+
+
 }
