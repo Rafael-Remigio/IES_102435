@@ -129,3 +129,14 @@ The annotations Table Column and Id are all JPA Data annotations
 * Column allows us to change the name and other configurations the specific column
 * Id indicates the primary key of a Table
 * Entity means that a class will be mapped and managed by JPA
+
+## d)
+Spring boot beans are all objects with spring Annotations that are created and managed by Spring. This means we don't need to worry about instanciating certain objects and passing them from class to class. **@Autowired**  is used to **resolve and inject collaborating beans into our bean**. This means it returns and injects classe without us saying how they are to be created.
+
+Exemple
+```
+    @Autowired
+    private MovieRepository movieRepository;
+
+```
+
