@@ -1,5 +1,7 @@
 package com.ies.lab3_3;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -84,11 +86,11 @@ public class MovieController {
 
 
     @GetMapping("/movieQuotes/{id}")
-    public Set<Quote> getMovieQuotes(@PathVariable(value = "id") Long movieId)
+    public Object[] getMovieQuotes(@PathVariable(value = "id") Long movieId)
         throws ResourceNotFoundException {
         Movie movie = movieRepository.findById(movieId)
           .orElseThrow(() -> new ResourceNotFoundException("Movie not found for this id :: " + movieId));
-        return movie.getQuotes();
+        return movie.getQuotes().toArray();
     }
 
 

@@ -99,3 +99,14 @@ docker container for database:
 ```
 rafael@rafael-K55VJ:~/Desktop/LEI/IES_102435/lab3/lab3_3$ docker run --name movieDB-mysql -e MYSQL_ROOT_PASSWORD=secret1 -e MYSQL_DATABASE=demo -e MYSQL_USER=demo -e MYSQL_PASSWORD=secret2 -p 33060:3306 -d mysql/mysql-server:5.7 
 ```
+
+To add a movie
+```
+url -H 'Content-Type: application/json' -s -XPOST http://localhost:8080/api/v1/movies -d '{"title": "Boss Baby", "year": 2017} '
+```
+
+To add quotes to a movie
+```
+ curl -H 'Content-Type: application/json' -s -XPUT http://localhost:8080/api/v1/movies/3/addQuote -d '{"value": "We may be small, but we re about to teach grown ups a big lesson."}'  
+```
+
