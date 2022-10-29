@@ -27,6 +27,10 @@ public class MovieController {
     @Autowired
     private MovieRepository movieRepository;
 
+    @Autowired
+    private QuoteRepository quoteRepository;
+
+
     @GetMapping("/movies")
     public List<Movie> getAllMovies() {
         return movieRepository.findAll();
@@ -60,14 +64,16 @@ public class MovieController {
     }
 
     
-    @PutMapping("/movies/{id}/addQuote")
+    @PostMapping("/movies/{id}/addQuote")
     public ResponseEntity<Movie> addQuote(@PathVariable(value = "id") Long movieId,
          @Valid @RequestBody Quote quote) throws ResourceNotFoundException {
         Movie movie = movieRepository.findById(movieId)
         .orElseThrow(() -> new ResourceNotFoundException("Movie not found for this id :: " + movieId));
 
-        movie.addQuote(quote);
-        System.out.println(quote);
+        movie.addQuote(quote);        
+        quote.setMovie(movie);
+
+        quoteRepository.save(quote);
         final Movie updatedmMovie = movieRepository.save(movie);
         return ResponseEntity.ok(updatedmMovie);
     }

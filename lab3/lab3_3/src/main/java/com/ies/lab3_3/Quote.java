@@ -17,7 +17,7 @@ public class Quote {
 
 
     @ManyToOne
-    @JoinColumn(name="movie", nullable=false)
+    @JoinColumn(name="movie")
     private  Movie movie;
 
 
@@ -38,6 +38,10 @@ public class Quote {
     public Quote( String value){
         this.value = value;
 
+    }
+
+    public void setMovie(Movie m){
+        this.movie = m;
     }
 
     public Movie getMovie() {
